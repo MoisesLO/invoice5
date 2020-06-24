@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-<div x-data="{open: 'moises linares'}">
+<div
+    class=""
+    x-data="{open: 'moises linares'}">
   <button class="px-3 py-2 bg-gray-100 rounded shadow" x-text="open"></button>
 </div>
 <script src="{{ asset('js/app.js') }}"></script>
