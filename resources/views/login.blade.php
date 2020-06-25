@@ -4,6 +4,8 @@
   {{-- Centra vertical --}}
   <div class="flex flex-col justify-center min-h-screen bg-indigo-100">
 
+    <h4 class="mx-auto text-3xl text-gray-700 mb-3">Iniciar Session</h4>
+
     {{-- Box --}}
     <div class="max-w-sm w-full mx-auto rounded-lg shadow px-10 py-8 bg-white">
       <form action="{{url('/post-login')}}" method="post">
@@ -18,7 +20,7 @@
                    class="w-full px-3 py-2 text-base text-gray-600 rounded-lg border focus:outline-none focus:shadow-outline"
                    placeholder="Email address">
             @if ($errors->has('email'))
-              <span class="error">{{ $errors->first('email') }}</span>
+              <span class="text-red-500 text-sm">{{ $errors->first('email') }}</span>
             @endif
           </div>
 
@@ -28,7 +30,7 @@
                    class="w-full px-3 py-2 text-base text-gray-600 rounded-lg border focus:outline-none focus:shadow-outline"
                    placeholder="Email address">
             @if ($errors->has('password'))
-              <span class="error">{{ $errors->first('password') }}</span>
+              <span class="text-red-500 text-sm">{{ $errors->first('password') }}</span>
             @endif
           </div>
 
@@ -37,8 +39,9 @@
             Entrar al sistema
           </button>
 
-          <div class="text-center">If you have an account?
-            <a class="small" href="{{url('registration')}}">Sign Up</a>
+          <div class="pt-3 text-gray-500 text-sm">
+            No tienes una cuenta?
+            <a class="text-sm text-indigo-500 font-bold" href="{{url('registration')}}">Registrate</a>
           </div>
         </div>
       </form>
