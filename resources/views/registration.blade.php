@@ -1,76 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Registration Form - Tutsmake.com</title>
+@extends('layouts.base')
+@section('body')
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <!--Bootsrap 4 CDN-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="{{url('style.css')}}">
+  <div class="flex flex-col justify-center min-h-screen bg-indigo-100">
+    <h4 class="mx-auto text-3xl text-gray-700 mb-3">Registro de usuario</h4>
 
-</head>
-<body>
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-3"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h2 class="login-heading mb-4">Register</h2>
-              <form action="{{url('/post-registration')}}" method="POST" id="regForm">
-                {{ csrf_field() }}
-                <div class="form-label-group">
-                  <input type="text" id="inputName" name="name" class="form-control"
-                         placeholder="Full name" autofocus>
-                  <label for="inputName">Name</label>
+    <div class="mx-auto max-w-sm w-full rounded-lg shadow px-10 py-8 bg-white">
+      <form action="{{url('/post-registration')}}" method="POST">
+        {{ csrf_field() }}
 
-                  @if ($errors->has('name'))
-                    <span class="error">{{ $errors->first('name') }}</span>
-                  @endif
-
-                </div>
-                <div class="form-label-group">
-                  <input type="email" name="email" id="inputEmail" class="form-control"
-                         placeholder="Email address">
-                  <label for="inputEmail">Email address</label>
-
-                  @if ($errors->has('email'))
-                    <span class="error">{{ $errors->first('email') }}</span>
-                  @endif
-                </div>
-
-                <div class="form-label-group">
-                  <input type="password" name="password" id="inputPassword" class="form-control"
-                         placeholder="Password">
-                  <label for="inputPassword">Password</label>
-
-                  @if ($errors->has('password'))
-                    <span class="error">{{ $errors->first('password') }}</span>
-                  @endif
-                </div>
-
-                <button
-                    class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                    type="submit">Sign Up
-                </button>
-                <div class="text-center">If you have an account?
-                  <a class="small" href="{{url('login')}}">Sign In</a></div>
-              </form>
-            </div>
-          </div>
+        {{-- Nombre --}}
+        <div class="flex flex-col">
+          <label class="text-base text-gray-600">Nombre</label>
+          <input type="text" name="name"
+                 class="mt-1 w-full px-3 py-2 text-base text-gray-600 rounded-lg border focus:outline-none focus:shadow-outline"
+                 placeholder="Full name" autofocus>
+          @if ($errors->has('name'))
+            <span class="text-red-500 text-sm">{{ $errors->first('name') }}</span>
+          @endif
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-</body>
-</html>
+        {{-- Email --}}
+        <div class="mt-3 flex flex-col">
+          <label class="text-base text-gray-600">Email address</label>
+          <input type="email" name="email" class="mt-1 w-full px-3 py-2 text-base text-gray-600 rounded-lg border focus:outline-none focus:shadow-outline" placeholder="Email address">
+          @if ($errors->has('email'))
+            <span class="text-red-500 text-sm">{{ $errors->first('email') }}</span>
+          @endif
+        </div>
+
+        <div class="mt-3 flex flex-col">
+          <label class="text-base text-gray-600">Password</label>
+          <input type="password" name="password" id="inputPassword" class="mt-1 w-full px-3 py-2 text-base text-gray-600 rounded-lg border focus:outline-none focus:shadow-outline" placeholder="Password">
+
+          @if ($errors->has('password'))
+            <span class="text-red-500 text-sm">{{ $errors->first('password') }}</span>
+          @endif
+        </div>
+
+        <button class="mt-4 block w-full bg-indigo-500 text-white px-3 py-2 rounded-lg" type="submit">
+          Sign Up
+        </button>
+        <div class="pt-3 text-gray-500 text-sm">
+          If you have an account?
+          <a class="text-sm text-indigo-500 font-bold" href="{{url('login')}}">Sign In</a></div>
+      </form>
+    </div>
+
+
+  </div>
+
+@endsection

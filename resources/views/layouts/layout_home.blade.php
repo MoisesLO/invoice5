@@ -19,7 +19,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
+<body>
 @yield('body')
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
