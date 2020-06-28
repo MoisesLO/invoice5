@@ -36,26 +36,23 @@
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
 
 
-
-        <nav class="relative flex items-center justify-between sm:h-10 md:justify-center">
+        <nav class="flex items-center justify-between sm:h-10">
 
           {{-- Logo --}}
-          <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-            <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
-                <img class="h-8 w-auto sm:h-10" src="/img/tallstack-logo.png" alt="TALL Stack logo"/>
-              </a>
-              <div class="-mr-2 flex items-center md:hidden">
-                <button @click="open = true" type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-                  </svg>
-                </button>
-              </div>
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+              <img class="h-8 w-auto sm:h-10" src="/img/tallstack-logo.png" alt="TALL Stack logo"/>
+            </a>
+            <div class="-mr-2 flex items-center md:hidden">
+              <button @click="open = true" type="button"
+                      class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
             </div>
           </div>
+
           {{-- End Logo --}}
 
           <div class="hidden md:block">
@@ -82,8 +79,11 @@
           </div>
 
           {{-- Auth --}}
-          <div class="hidden md:block left-0">
-            hola mundo
+          <div class="hidden md:block">
+            <a href="/login" class="font-medium text-green-500 font-bold hover:text-green-600 transition duration-150">Login</a>
+            <a href="/registration" class="ml-5 font-medium text-green-500 font-bold hover:text-green-600 transition duration-150">
+              Registro
+            </a>
           </div>
           {{-- End Auth --}}
 
