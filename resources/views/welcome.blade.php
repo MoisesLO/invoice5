@@ -1,7 +1,10 @@
 @extends('layouts.base')
 @section('body')
 
+  {{-- Header: menu mas jumbotron --}}
   <div class="relative overflow-hidden">
+
+    {{-- Absolute que sobrepondra al que le sigue --}}
     <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
       <div class="relative h-full max-w-screen-xl mx-auto">
         <svg class="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2" width="404"
@@ -25,10 +28,18 @@
         </svg>
       </div>
     </div>
+    {{-- End absolute --}}
+
     <div x-data="{ open: false }" class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-28">
 
+      {{-- Menu Top--}}
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+
+
+
         <nav class="relative flex items-center justify-between sm:h-10 md:justify-center">
+
+          {{-- Logo --}}
           <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="#">
@@ -45,41 +56,63 @@
               </div>
             </div>
           </div>
+          {{-- End Logo --}}
+
           <div class="hidden md:block">
             <a href="#"
-               class="font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Tailwind</a>
+               class="font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+              Precios
+            </a>
             <a href="#"
-               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Alpine.js</a>
+               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+              Clientes
+            </a>
             <a href="#"
-               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Laravel</a>
+               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+              Documentacion
+            </a>
             <a href="#"
-               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Livewire</a>
+               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+              Soporte
+            </a>
+            <a href="#"
+               class="ml-10 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+              Preguntas
+            </a>
           </div>
+
+          {{-- Auth --}}
+          <div class="hidden md:block left-0">
+            hola mundo
+          </div>
+          {{-- End Auth --}}
+
         </nav>
       </div>
 
+      {{-- Jumbotron --}}
       <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
         <div class="text-center">
           <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-            Reactive Laravel apps with the
+            Facturacion electronica peru
             <br class="xl:hidden"/>
-            <span class="text-green-600">TALL stack</span>
+            <span class="text-green-600">Empresas</span>
           </h2>
           <p class="leading-7 mt-3 max-w-md mx-auto text-base text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Tailwind, Alpine.js, Laravel, and Livewire. A full-stack development solution, built by Laravel community
-            members.
+            Somos una empresa especializada en facturacion electronica en todo el peru, y tenemos las mejores soluciones
+            para tu empresa.
           </p>
           <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <div class="rounded-md shadow">
               <a href="#components"
                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
-                Learn more
+                Ver Precios
               </a>
             </div>
             <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
               <a href="https://github.com/tightenco/novapackages"
                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-green-600 bg-white hover:text-green-500 focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
-                View example app
+                Probar demo
               </a>
             </div>
           </div>
